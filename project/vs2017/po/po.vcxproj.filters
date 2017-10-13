@@ -4,17 +4,14 @@
     <Filter Include="po">
       <UniqueIdentifier>{73e8bde2-1807-4ef4-b28a-a3ddb61026f0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="po\frame">
-      <UniqueIdentifier>{9334802d-d260-43e4-b47d-b8b69e0b2adf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="po\tool">
       <UniqueIdentifier>{d673c4e2-24ae-433e-8049-9021bc1993a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="po\implement">
+      <UniqueIdentifier>{3346dc6a-e6bf-4033-8b2b-6686c031cc8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\include\po\frame\define.cpp">
-      <Filter>po\frame</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\include\po\tool\utf_support.cpp">
       <Filter>po\tool</Filter>
     </ClCompile>
@@ -24,44 +21,23 @@
     <ClCompile Include="..\..\..\include\po\tool\scene.cpp">
       <Filter>po\tool</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\include\po\plugin.cpp">
-      <Filter>po</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\include\po\po.cpp">
-      <Filter>po</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\include\po\renderer.cpp">
-      <Filter>po</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\include\po\frame\adapter.cpp">
-      <Filter>po\frame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\include\po\extension.cpp">
-      <Filter>po</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\include\po\respond.cpp">
-      <Filter>po</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\include\po\tool\simple_command_analyzer.cpp">
       <Filter>po\tool</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\include\po\implement\define.cpp">
+      <Filter>po\implement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\po\implement\event.cpp">
+      <Filter>po\implement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\po\implement\extension.cpp">
+      <Filter>po\implement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\po\implement\ecs_framework.cpp">
+      <Filter>po\implement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\po\frame\viewer.h">
-      <Filter>po\frame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\frame\event.h">
-      <Filter>po\frame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\frame\error.h">
-      <Filter>po\frame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\frame\define.h">
-      <Filter>po\frame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\frame\adapter.h">
-      <Filter>po\frame</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\po\tool\utf_support.h">
       <Filter>po\tool</Filter>
     </ClInclude>
@@ -86,26 +62,23 @@
     <ClInclude Include="..\..\..\include\po\tool\auto_adapter.h">
       <Filter>po\tool</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\po\form.h">
-      <Filter>po</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\plugin.h">
-      <Filter>po</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\po.h">
-      <Filter>po</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\renderer.h">
-      <Filter>po</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\extension.h">
-      <Filter>po</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\po\respond.h">
-      <Filter>po</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\po\tool\simple_command_analyzer.h">
       <Filter>po\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\po\implement\define.h">
+      <Filter>po\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\po\implement\error.h">
+      <Filter>po\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\po\implement\event.h">
+      <Filter>po\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\po\implement\extension.h">
+      <Filter>po\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\po\implement\ecs_framework.h">
+      <Filter>po\implement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

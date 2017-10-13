@@ -19,30 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\include\po\extension.cpp" />
-    <ClCompile Include="..\..\..\include\po\frame\adapter.cpp" />
-    <ClCompile Include="..\..\..\include\po\frame\define.cpp" />
-    <ClCompile Include="..\..\..\include\po\plugin.cpp" />
-    <ClCompile Include="..\..\..\include\po\po.cpp" />
-    <ClCompile Include="..\..\..\include\po\renderer.cpp" />
-    <ClCompile Include="..\..\..\include\po\respond.cpp" />
+    <ClCompile Include="..\..\..\include\po\implement\define.cpp" />
+    <ClCompile Include="..\..\..\include\po\implement\ecs_framework.cpp" />
+    <ClCompile Include="..\..\..\include\po\implement\event.cpp" />
+    <ClCompile Include="..\..\..\include\po\implement\extension.cpp" />
     <ClCompile Include="..\..\..\include\po\tool\scene.cpp" />
     <ClCompile Include="..\..\..\include\po\tool\simple_command_analyzer.cpp" />
     <ClCompile Include="..\..\..\include\po\tool\thread_tool.cpp" />
     <ClCompile Include="..\..\..\include\po\tool\utf_support.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\po\extension.h" />
-    <ClInclude Include="..\..\..\include\po\form.h" />
-    <ClInclude Include="..\..\..\include\po\frame\adapter.h" />
-    <ClInclude Include="..\..\..\include\po\frame\define.h" />
-    <ClInclude Include="..\..\..\include\po\frame\error.h" />
-    <ClInclude Include="..\..\..\include\po\frame\event.h" />
-    <ClInclude Include="..\..\..\include\po\frame\viewer.h" />
-    <ClInclude Include="..\..\..\include\po\plugin.h" />
-    <ClInclude Include="..\..\..\include\po\po.h" />
-    <ClInclude Include="..\..\..\include\po\renderer.h" />
-    <ClInclude Include="..\..\..\include\po\respond.h" />
+    <ClInclude Include="..\..\..\include\po\implement\define.h" />
+    <ClInclude Include="..\..\..\include\po\implement\ecs_framework.h" />
+    <ClInclude Include="..\..\..\include\po\implement\error.h" />
+    <ClInclude Include="..\..\..\include\po\implement\event.h" />
+    <ClInclude Include="..\..\..\include\po\implement\extension.h" />
     <ClInclude Include="..\..\..\include\po\tool\auto_adapter.h" />
     <ClInclude Include="..\..\..\include\po\tool\mail.h" />
     <ClInclude Include="..\..\..\include\po\tool\scene.h" />

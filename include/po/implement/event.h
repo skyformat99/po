@@ -1,46 +1,7 @@
 #pragma once
-#include <chrono>
-#include <stdint.h>
-#include "..\tool\tool.h"
-#include "..\tool\thread_tool.h"
-
+#include "define.h"
 namespace PO
 {
-	using duration = std::chrono::duration<long long, std::ratio<1, 1000>>;
-	using time_point = std::chrono::time_point<std::chrono::system_clock>;
-	inline decltype(auto) get_time_now() { return std::chrono::system_clock::now(); }
-	struct time_calculator
-	{
-		time_point record_point;
-		duration require_duration;
-	public:
-		time_calculator(time_calculator&) = default;
-		time_calculator(duration du = duration(10)) : record_point(get_time_now()), require_duration(du) {}
-		void set_duration(duration du) { require_duration = du; }
-		bool tick(time_point tp, duration& dua)
-		{
-			dua = std::chrono::duration_cast<duration>(tp - record_point);
-			if (dua >= require_duration)
-			{
-				record_point = tp;
-				return true;
-			}
-			return false;
-		}
-		template<typename T>
-		bool tick(time_point tp, T&& t)
-		{
-			duration dua = std::chrono::duration_cast<duration>(tp - record_point);
-			if (dua >= require_duration)
-			{
-				record_point = tp;
-				t(dua);
-				return true;
-			}
-			return false;
-		}
-	};
-
 	class event_touch
 	{
 	public:
@@ -59,7 +20,7 @@ namespace PO
 	enum class ButtonState : int8_t
 	{
 		BS_UP = 0,
-		BS_DOWN =1,
+		BS_DOWN = 1,
 	};
 
 	enum class KeyState : int8_t
@@ -111,7 +72,7 @@ namespace PO
 		KeyValue key_value;
 		int16_t location_x;
 		int16_t location_y;
-		bool is_up() const  { return button_state == ButtonState::BS_UP; }
+		bool is_up() const { return button_state == ButtonState::BS_UP; }
 		bool is_down() const { return button_state == ButtonState::BS_DOWN; }
 		bool is_left()const { return key_value == KeyValue::K_LBUTTON; }
 		bool is_middle()const { return key_value == KeyValue::K_MBUTTON; }
@@ -149,13 +110,13 @@ namespace PO
 		move_type move;
 		key_type key;
 	};
-	
+
 	/*
 	template<typename T>
 	struct key_event
 	{
-		key_type& ref;
-		bool 
+	key_type& ref;
+	bool
 	};
 	*/
 
@@ -171,7 +132,7 @@ namespace PO
 		click_type click;
 		move_type move;
 		key_type key;
-		
+
 
 		bool is_quit() const { return type == EventType::E_CLOSE; }
 		bool is_click() const { return type == EventType::E_CLICK; }
@@ -186,53 +147,4 @@ namespace PO
 		Return
 	};
 
-	class binary
-	{
-		std::shared_ptr<std::vector<char>> ptr;
-	public:
-		class weak_ref
-		{
-			std::weak_ptr<std::vector<char>> ptr;
-			friend class binary;
-		public:
-			weak_ref() = default;
-			weak_ref(const binary& b) : ptr(b.ptr) {}
-			weak_ref(const weak_ref&) = default;
-			weak_ref(weak_ref&&) = default;
-			weak_ref& operator=(const weak_ref&) = default;
-			weak_ref& operator=(weak_ref&&) = default;
-			operator bool() const { return !ptr.expired(); }
-			binary lock() const { binary tem; tem.ptr = ptr.lock(); return tem; }
-			bool operator ==(const weak_ref& b) const { return ptr.owner_before(b.ptr); }
-		};
-
-		binary() {}
-		binary(size_t s) { ptr = std::make_shared<std::vector<char>>(s, '\0'); }
-
-		bool operator ==(const binary& b) const { return ptr == b.ptr; }
-
-		binary(const binary& b) = default;
-		binary(binary&& b) = default;
-		binary& operator=(binary&&) = default;
-		binary& operator=(const binary&) = default;
-		void reset() { ptr.reset(); }
-		uint64_t size() const
-		{ 
-			return ptr ? ptr->size() : 0;
-		}
-		operator char* () const 
-		{
-			if (ptr)
-				return ptr->data();
-			return nullptr; 
-		}
-		operator void* () const 
-		{ 
-			if (ptr)
-				return reinterpret_cast<void*>(ptr->data());
-			return nullptr; 
-		}
-		operator uint8_t*() const {return reinterpret_cast<uint8_t*>(ptr->data()); }
-		operator bool() const { return static_cast<bool>(ptr); }
-	};
 }

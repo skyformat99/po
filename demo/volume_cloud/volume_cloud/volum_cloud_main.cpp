@@ -18,11 +18,8 @@
 
 
 
-
 int main(int count, const char** parameter)
 {
-
-
 
 #ifdef DEBUG
 	PO::Dx11::add_shader_path<PO::Dx::shader_binary>(u"..\\..\\..\\..\\project\\vs2017\\po_dx11\\lib\\shader\\Debug");

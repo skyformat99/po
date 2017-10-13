@@ -2,10 +2,33 @@
 #include <map>
 #include <exception>
 #include <typeindex>
-#include "frame\define.h"
-#include "frame\viewer.h"
 #include "tool\auto_adapter.h"
+#include "implement\define.h"
 namespace PO {
+
+	class form_interface
+	{
+		std::atomic_bool avalible;
+	private:
+		void close_window() {}
+	public:
+		form_interface() : avalible(true) {}
+		bool is_avalible() const { return avalible; }
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	struct value_table
 	{
